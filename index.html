@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheikh Sadly Ahamed | Software Engineer (Java, AI & Mobile Specialist)</title>
+    <meta name="description" content="Portfolio of Sheikh Sadly Ahamed - Software Engineer specializing in Java 21+, Spring Boot 3+, Microservices, Elasticsearch/ELK, Agentic AI, and Flutter & Native Android Mobile Security Apps.">
+    <meta name="keywords" content="Java Developer, Spring Boot, Microservices, Elasticsearch, ELK Stack, Agentic AI, RAG, Flutter, Android, Kotlin, Mobile Security, Software Engineer, Sheikh Sadly Ahamed, Portfolio">
+    <meta name="author" content="Sheikh Sadly Ahamed">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sheikh Sadly Ahamed | Software Engineer (Java, AI & Mobile Specialist)">
+    <meta property="og:description" content="2.5+ years experience building scalable enterprise Java microservices, Elasticsearch search optimization, Agentic AI systems, and cross-platform Flutter/Android security apps.">
+    <meta property="og:image" content="assets/profile.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas Grid & Glows -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar-wrapper" id="navbar">
+        <nav class="nav-container">
+            <a href="#hero" class="brand-logo" id="brand-logo">
+                <span class="code-bracket">&lt;</span>
+                <span class="brand-name">Sadly<span class="accent-dot">.</span>Ahamed</span>
+                <span class="code-bracket">/&gt;</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> <span>About</span></a></li>
+                <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> <span>Skills</span></a></li>
+                <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> <span>Experience</span></a></li>
+                <li><a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> <span>Projects</span></a></li>
+                <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> <span>Education</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="assets/Sheikh_Sadly_Ahamed_CV.docx" download="Sheikh_Sadly_Ahamed_CV.docx" class="btn btn-outline btn-sm cv-btn" id="nav-cv-download">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <span>Resume</span>
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-grid">
+                <!-- Hero Left: Info & Pitch -->
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Available for Java, AI & Mobile Engineering Roles</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Sheikh Sadly Ahamed</span>
+                    </h1>
+
+                    <div class="hero-role-wrapper">
+                        <span class="role-prefix">I architect & build </span>
+                        <span class="typing-text" id="typing-role"></span>
+                        <span class="cursor">&nbsp;</span>
+                    </div>
+
+                    <p class="hero-bio">
+                        Software Engineer with <strong>2.5+ years</strong> of enterprise experience specializing in <strong>Java 21+</strong>, <strong>Spring Boot 3+</strong>, <strong>Microservices</strong>, high-speed <strong>Elasticsearch</strong>, <strong>Agentic AI & RAG</strong> systems, and <strong>Flutter & Native Android</strong> mobile security applications.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary" id="hero-view-projects">
+                            <i class="fa-solid fa-rocket"></i>
+                            <span>View Featured Work</span>
+                        </a>
+                        <a href="assets/Sheikh_Sadly_Ahamed_CV.docx" download="Sheikh_Sadly_Ahamed_CV.docx" class="btn btn-secondary" id="hero-download-cv">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Download CV</span>
+                        </a>
+                        <a href="#contact" class="btn btn-ghost" id="hero-contact-me">
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats Cards -->
+                    <div class="hero-stats-row">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="2.5" data-suffix="+">0+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="5" data-suffix="+">0+</div>
+                            <div class="stat-label">Production Systems</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="99.9" data-suffix="%">0%</div>
+                            <div class="stat-label">Uptime Architecture</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="100" data-suffix="%">0%</div>
+                            <div class="stat-label">TDD & Code Quality</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Avatar Card with Floating Tech Badges -->
+                <div class="hero-visual">
+                    <div class="avatar-card-container">
+                        <div class="avatar-glow-ring"></div>
+                        <div class="avatar-card">
+                            <img src="assets/profile.png" alt="Sheikh Sadly Ahamed - Software Engineer" class="profile-img" id="hero-avatar">
+                            <div class="avatar-overlay">
+                                <div class="avatar-info">
+                                    <h3>Sheikh Sadly Ahamed</h3>
+                                    <p><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Tech Tags -->
+                        <div class="floating-badge badge-top-left" title="Java 21+ Microservices">
+                            <i class="fa-brands fa-java text-orange"></i>
+                            <span>Java 21+</span>
+                        </div>
+                        <div class="floating-badge badge-top-right" title="Spring Boot 3 Enterprise">
+                            <i class="fa-solid fa-leaf text-green"></i>
+                            <span>Spring Boot 3</span>
+                        </div>
+                        <div class="floating-badge badge-mid-left" title="Flutter & Native Android">
+                            <i class="fa-brands fa-android text-cyan"></i>
+                            <span>Flutter & Kotlin</span>
+                        </div>
+                        <div class="floating-badge badge-bottom-right" title="Agentic AI & RAG Workflows">
+                            <i class="fa-solid fa-brain text-purple"></i>
+                            <span>Agentic AI & RAG</span>
+                        </div>
+                        <div class="floating-badge badge-bottom-left" title="Elasticsearch & Event Streams">
+                            <i class="fa-solid fa-magnifying-glass text-yellow"></i>
+                            <span>Elasticsearch & Kafka</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Architecture Showcase Widget -->
+        <section class="code-showcase-section">
+            <div class="container">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="t-btn t-close"></span>
+                            <span class="t-btn t-minimize"></span>
+                            <span class="t-btn t-maximize"></span>
+                        </div>
+                        <div class="terminal-tabs" id="code-tabs">
+                            <button class="t-tab active" data-tab="java-service">
+                                <i class="fa-brands fa-java text-orange"></i> LoanService.java
+                            </button>
+                            <button class="t-tab" data-tab="mobile-security">
+                                <i class="fa-brands fa-android text-green"></i> SecureEyeAdminReceiver.kt
+                            </button>
+                            <button class="t-tab" data-tab="elastic-query">
+                                <i class="fa-solid fa-magnifying-glass text-yellow"></i> ElasticSearchEngine.java
+                            </button>
+                            <button class="t-tab" data-tab="agentic-ai">
+                                <i class="fa-solid fa-robot text-purple"></i> AgenticRagWorkflow.java
+                            </button>
+                            <button class="t-tab" data-tab="kafka-event">
+                                <i class="fa-solid fa-bolt text-cyan"></i> FinancialEventStream.java
+                            </button>
+                        </div>
+                        <div class="terminal-env-tag">
+                            <i class="fa-solid fa-microchip"></i> JDK 21 | Spring Boot 3.3
+                        </div>
+                    </div>
+                    
+                    <div class="terminal-body">
+                        <!-- Code Panel 1: Java Microservice -->
+                        <pre class="code-panel active" id="tab-java-service"><code><span class="k">@Service</span>
+<span class="k">@RequiredArgsConstructor</span>
+<span class="k">@Transactional</span>
+<span class="k">public class</span> <span class="t">LoanProcessingService</span> {
+
+    <span class="k">private final</span> <span class="t">LoanApplicationRepository</span> <span class="v">loanRepo</span>;
+    <span class="k">private final</span> <span class="t">ElasticsearchTemplate</span> <span class="v">elasticTemplate</span>;
+    <span class="k">private final</span> <span class="t">RabbitTemplate</span> <span class="v">rabbitTemplate</span>;
+    <span class="k">private final</span> <span class="t">AiRiskAssessmentAgent</span> <span class="v">aiAgent</span>;
+
+    <span class="k">public</span> <span class="t">CompletableFuture&lt;LoanApprovalResponse&gt;</span> <span class="f">processRetailLoan</span>(<span class="t">@Valid</span> <span class="t">LoanRequest</span> <span class="v">request</span>) {
+        <span class="c">// 1. High-throughput validation & persist state with Spring Data JPA</span>
+        <span class="k">var</span> <span class="v">loan</span> = <span class="v">loanRepo</span>.<span class="f">save</span>(<span class="t">LoanMapper</span>.<span class="f">toEntity</span>(<span class="v">request</span>));
+
+        <span class="c">// 2. Index real-time searchable record into Elasticsearch cluster</span>
+        <span class="v">elasticTemplate</span>.<span class="f">save</span>(<span class="k">new</span> <span class="t">LoanSearchDocument</span>(<span class="v">loan</span>.<span class="f">getId</span>(), <span class="v">loan</span>.<span class="f">getCitizenId</span>(), <span class="v">loan</span>.<span class="f">getAmount</span>()));
+
+        <span class="c">// 3. Dispatch async event to RabbitMQ approval queue</span>
+        <span class="v">rabbitTemplate</span>.<span class="f">convertAndSend</span>(<span class="s">"loan.exchange"</span>, <span class="s">"loan.approval.routingKey"</span>, <span class="v">loan</span>);
+
+        <span class="c">// 4. Run AI Agentic RAG credit risk analysis</span>
+        <span class="k">return</span> <span class="v">aiAgent</span>.<span class="f">evaluateRiskScoreAsync</span>(<span class="v">loan</span>)
+            .<span class="f">thenApply</span>(<span class="v">score</span> -> <span class="k">new</span> <span class="t">LoanApprovalResponse</span>(<span class="v">loan</span>.<span class="f">getId</span>(), <span class="t">Status</span>.PROCESSING, <span class="v">score</span>));
+    }
+}</code></pre>
+
+                        <!-- Code Panel: Android & Kotlin Security Receiver -->
+                        <pre class="code-panel" id="tab-mobile-security"><code><span class="k">class</span> <span class="t">SecureEyeAdminReceiver</span> : <span class="t">DeviceAdminReceiver</span>() {
+
+    <span class="c">/**
+     * Silent intrusion photo capture and direct Google Drive sync on wrong PIN
+     */</span>
+    <span class="k">override fun</span> <span class="f">onPasswordFailed</span>(<span class="v">context</span>: <span class="t">Context</span>, <span class="v">intent</span>: <span class="t">Intent</span>, <span class="v">user</span>: <span class="t">UserHandle</span>) {
+        <span class="k">val</span> <span class="v">dpm</span> = <span class="f">getManager</span>(<span class="v">context</span>)
+        <span class="k">val</span> <span class="v">attempts</span> = <span class="v">dpm</span>.<span class="v">currentFailedPasswordAttempts</span>
+
+        <span class="k">if</span> (<span class="v">attempts</span> &gt;= 1) {
+            <span class="c">// 1. Trigger background front camera snapshot silently via CameraX</span>
+            <span class="t">SilentCameraManager</span>.<span class="f">captureIntruderPhoto</span>(<span class="v">context</span>) { <span class="v">photoFile</span> -&gt;
+                <span class="c">// 2. Auto-email & upload directly to User's Google Drive (Zero server cost)</span>
+                <span class="t">GoogleDriveSyncWorker</span>.<span class="f">uploadIntruderSnapshot</span>(<span class="v">context</span>, <span class="v">photoFile</span>)
+                <span class="t">IntruderNotifier</span>.<span class="f">dispatchSecurityAlertEmail</span>(<span class="v">context</span>, <span class="v">photoFile</span>)
+            }
+        }
+    }
+}</code></pre>
+
+                        <!-- Code Panel 2: Elasticsearch Query -->
+                        <pre class="code-panel" id="tab-elastic-query"><code><span class="k">@Component</span>
+<span class="k">@RequiredArgsConstructor</span>
+<span class="k">public class</span> <span class="t">ElasticSearchOptimizer</span> {
+
+    <span class="k">private final</span> <span class="t">ElasticsearchClient</span> <span class="v">esClient</span>;
+
+    <span class="c">/**
+     * Sub-50ms search query across millions of enterprise banking audit records
+     */</span>
+    <span class="k">public</span> <span class="t">SearchResponse&lt;AuditLogDoc&gt;</span> <span class="f">searchHighVolumeLogs</span>(<span class="t">String</span> <span class="v">keyword</span>, <span class="t">DateRange</span> <span class="v">range</span>) <span class="k">throws</span> <span class="t">IOException</span> {
+        <span class="k">return</span> <span class="v">esClient</span>.<span class="f">search</span>(<span class="v">s</span> -> <span class="v">s</span>
+            .<span class="f">index</span>(<span class="s">"banking-audit-logs"</span>)
+            .<span class="f">query</span>(<span class="v">q</span> -> <span class="v">q</span>
+                .<span class="f">bool</span>(<span class="v">b</span> -> <span class="v">b</span>
+                    .<span class="f">must</span>(<span class="v">m</span> -> <span class="v">m</span>.<span class="f">multiMatch</span>(<span class="v">mm</span> -> <span class="v">mm</span>
+                        .<span class="f">query</span>(<span class="v">keyword</span>)
+                        .<span class="f">fields</span>(<span class="s">"accountNumber^3"</span>, <span class="s">"transactionType^2"</span>, <span class="s">"payload"</span>)
+                        .<span class="f">fuzziness</span>(<span class="s">"AUTO"</span>)))
+                    .<span class="f">filter</span>(<span class="v">f</span> -> <span class="v">f</span>.<span class="f">range</span>(<span class="v">r</span> -> <span class="v">r</span>.<span class="f">field</span>(<span class="s">"@timestamp"</span>)
+                        .<span class="f">gte</span>(<span class="t">JsonData</span>.<span class="f">of</span>(<span class="v">range</span>.<span class="f">from</span>()))
+                        .<span class="f">lte</span>(<span class="t">JsonData</span>.<span class="f">of</span>(<span class="v">range</span>.<span class="f">to</span>()))))
+                )
+            )
+            .<span class="f">size</span>(100),
+            <span class="t">AuditLogDoc</span>.<span class="k">class</span>
+        );
+    }
+}</code></pre>
+
+                        <!-- Code Panel 3: Agentic AI RAG -->
+                        <pre class="code-panel" id="tab-agentic-ai"><code><span class="k">@Service</span>
+<span class="k">public class</span> <span class="t">AgenticRagWorkflow</span> {
+
+    <span class="k">private final</span> <span class="t">ChatLanguageModel</span> <span class="v">llmClient</span>;
+    <span class="k">private final</span> <span class="t">VectorStore</span> <span class="v">vectorStore</span>;
+    <span class="k">private final</span> <span class="t">FinancialToolsRegistry</span> <span class="v">tools</span>;
+
+    <span class="c">/**
+     * Autonomous agent workflow with Retrieval-Augmented Generation & Tool Calling
+     */</span>
+    <span class="k">public</span> <span class="t">AiAnalysisReport</span> <span class="f">orchestrateFinancialEvaluation</span>(<span class="t">String</span> <span class="v">userQuery</span>, <span class="t">UUID</span> <span class="v">entityId</span>) {
+        <span class="c">// 1. Vector similarity search over policy knowledge base</span>
+        <span class="t">List&lt;Document&gt;</span> <span class="v">contextDocs</span> = <span class="v">vectorStore</span>.<span class="f">findSimilar</span>(<span class="v">userQuery</span>, 5);
+
+        <span class="c">// 2. Dynamic Tool Calling orchestration with LLM</span>
+        <span class="k">var</span> <span class="v">agentPrompt</span> = <span class="t">PromptTemplate</span>.<span class="f">builder</span>()
+            .<span class="f">systemInstruction</span>(<span class="s">"You are an enterprise financial auditor with automated tool invocation."</span>)
+            .<span class="f">context</span>(<span class="v">contextDocs</span>)
+            .<span class="f">registerTools</span>(<span class="v">tools</span>.<span class="f">getAuditTools</span>())
+            .<span class="f">build</span>();
+
+        <span class="k">return</span> <span class="v">llmClient</span>.<span class="f">executeAgentLoop</span>(<span class="v">agentPrompt</span>, <span class="v">userQuery</span>);
+    }
+}</code></pre>
+
+                        <!-- Code Panel 4: Kafka Event Stream -->
+                        <pre class="code-panel" id="tab-kafka-event"><code><span class="k">@Component</span>
+<span class="k">@Slf4j</span>
+<span class="k">public class</span> <span class="t">FinancialEventStreamProducer</span> {
+
+    <span class="k">private final</span> <span class="t">KafkaTemplate&lt;String, FinancialTransactionEvent&gt;</span> <span class="v">kafkaTemplate</span>;
+
+    <span class="k">public void</span> <span class="f">streamTransaction</span>(<span class="t">FinancialTransactionEvent</span> <span class="v">event</span>) {
+        <span class="t">ProducerRecord&lt;String, FinancialTransactionEvent&gt;</span> <span class="v">record</span> = 
+            <span class="k">new</span> <span class="t">ProducerRecord&lt;&gt;</span>(<span class="s">"financial.transactions.v1"</span>, <span class="v">event</span>.<span class="f">getTenantId</span>(), <span class="v">event</span>);
+
+        <span class="v">kafkaTemplate</span>.<span class="f">send</span>(<span class="v">record</span>).<span class="f">whenComplete</span>((<span class="v">result</span>, <span class="v">ex</span>) -> {
+            <span class="k">if</span> (<span class="v">ex</span> != <span class="k">null</span>) {
+                <span class="v">log</span>.<span class="f">error</span>(<span class="s">"Failed to stream financial event: {}"</span>, <span class="v">event</span>.<span class="f">getTxId</span>(), <span class="v">ex</span>);
+            } <span class="k">else</span> {
+                <span class="v">log</span>.<span class="f">info</span>(<span class="s">"Successfully streamed partition: {}, offset: {}"</span>,
+                    <span class="v">result</span>.<span class="f">getRecordMetadata</span>().<span class="f">partition</span>(),
+                    <span class="v">result</span>.<span class="f">getRecordMetadata</span>().<span class="f">offset</span>());
+            }
+        });
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle"><i class="fa-solid fa-fingerprint"></i> About Me</span>
+                    <h2 class="section-title">Architecting Robust Backend Systems with <span class="gradient-text">Precision & Intelligence</span></h2>
+                    <p class="section-desc">Transforming business logic into high-performing, fault-tolerant enterprise software solutions.</p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Bio Text Column -->
+                    <div class="about-card glass-panel">
+                        <div class="card-icon-header">
+                            <i class="fa-solid fa-code-commit"></i>
+                            <h3>Professional Overview</h3>
+                        </div>
+                        <p>
+                            I am a driven and self-motivated <strong>Software Engineer</strong> based in Dhaka, Bangladesh, with <strong>2.5 years</strong> of hands-on professional experience engineering scalable, enterprise-grade applications and production mobile security systems.
+                        </p>
+                        <p>
+                            My core expertise spans modern <strong>Java (21+)</strong> and <strong>Spring Boot (3+)</strong> microservices, distributed search architectures via <strong>Elasticsearch & the ELK stack</strong>, cutting-edge <strong>Agentic AI</strong> workflows (LLM integration, RAG, prompt engineering, tool calling), and high-performance <strong>Flutter (Dart) & Native Android (Kotlin)</strong> security applications.
+                        </p>
+                        <p>
+                            Whether designing event-driven microservices with Kafka & RabbitMQ, architecting offline MBTiles spatial engines, or automating CI/CD pipelines on AWS with Docker and Kubernetes, I adhere firmly to <strong>Clean Code</strong>, <strong>TDD (Test-Driven Development)</strong>, and Agile engineering principles.
+                        </p>
+
+                        <div class="contact-pill-row">
+                            <div class="contact-pill" onclick="copyToClipboard('sadlyahamed1@gmail.com', 'Email copied to clipboard!')">
+                                <i class="fa-solid fa-envelope text-cyan"></i>
+                                <span>sadlyahamed1@gmail.com</span>
+                                <i class="fa-regular fa-copy copy-icon"></i>
+                            </div>
+                            <div class="contact-pill" onclick="copyToClipboard('+8801750942992', 'Phone number copied to clipboard!')">
+                                <i class="fa-solid fa-phone text-green"></i>
+                                <span>+880 1750 942992</span>
+                                <i class="fa-regular fa-copy copy-icon"></i>
+                            </div>
+                            <div class="contact-pill">
+                                <i class="fa-solid fa-location-dot text-orange"></i>
+                                <span>Dhaka, Bangladesh</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 Pillars Highlights -->
+                    <div class="pillars-grid">
+                        <div class="pillar-card glass-panel">
+                            <div class="pillar-icon bg-cyan-subtle">
+                                <i class="fa-solid fa-server text-cyan"></i>
+                            </div>
+                            <h4>Microservices Architecture</h4>
+                            <p>Building resilient, loosely coupled microservices with Spring Cloud, RESTful APIs, Spring Security, JWT, and distributed caching.</p>
+                        </div>
+
+                        <div class="pillar-card glass-panel">
+                            <div class="pillar-icon bg-yellow-subtle">
+                                <i class="fa-solid fa-magnifying-glass-chart text-yellow"></i>
+                            </div>
+                            <h4>Search & ELK Optimization</h4>
+                            <p>Designing Elasticsearch indices, cluster shard management, complex aggregate queries, and log analytics with Logstash & Kibana.</p>
+                        </div>
+
+                        <div class="pillar-card glass-panel">
+                            <div class="pillar-icon bg-purple-subtle">
+                                <i class="fa-solid fa-brain text-purple"></i>
+                            </div>
+                            <h4>Agentic AI & RAG Workflows</h4>
+                            <p>Integrating LLMs, Vector Databases, Retrieval-Augmented Generation, and autonomous tool calling into real enterprise business flows.</p>
+                        </div>
+
+                        <div class="pillar-card glass-panel">
+                            <div class="pillar-icon bg-green-subtle">
+                                <i class="fa-brands fa-android text-green"></i>
+                            </div>
+                            <h4>Mobile Security & Flutter</h4>
+                            <p>Engineering native Android security (DeviceAdminReceiver, CameraX) & Flutter apps with offline MBTiles maps and Firebase Firestore licensing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Competencies (Skills) Section -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle"><i class="fa-solid fa-layer-group"></i> Technical Skills</span>
+                    <h2 class="section-title">Core Competencies & <span class="gradient-text">Technology Stack</span></h2>
+                    <p class="section-desc">Battle-tested tools and frameworks utilized to design, build, and deploy production systems.</p>
+                </div>
+
+                <!-- Skill Filter Tabs -->
+                <div class="skill-tabs-container">
+                    <button class="skill-filter-btn active" data-filter="all">All Tech</button>
+                    <button class="skill-filter-btn" data-filter="backend">Backend & Java</button>
+                    <button class="skill-filter-btn" data-filter="mobile">Mobile (Flutter & Android)</button>
+                    <button class="skill-filter-btn" data-filter="search-ai">Search & AI</button>
+                    <button class="skill-filter-btn" data-filter="db-broker">Databases & Brokers</button>
+                    <button class="skill-filter-btn" data-filter="devops">DevOps & Cloud</button>
+                    <button class="skill-filter-btn" data-filter="frontend">Frontend</button>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Java 21+ -->
+                    <div class="skill-card glass-panel" data-category="backend">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-java text-orange"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Java (v21+)</h4>
+                                <span class="skill-badge">Core Backend</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Virtual threads, Pattern Matching, Records, Streams, Concurrency, and JVM memory tuning.</p>
+                        <div class="skill-tags">
+                            <span>Java 21</span>
+                            <span>OOP</span>
+                            <span>Multithreading</span>
+                            <span>JVM</span>
+                        </div>
+                    </div>
+
+                    <!-- Spring Boot 3+ -->
+                    <div class="skill-card glass-panel" data-category="backend">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-leaf text-green"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Spring Boot 3+</h4>
+                                <span class="skill-badge">Framework</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Spring Data JPA, Spring Security, JWT auth, WebFlux, Validation, and Microservices integration.</p>
+                        <div class="skill-tags">
+                            <span>Spring Boot 3</span>
+                            <span>Spring Security</span>
+                            <span>JPA / Hibernate</span>
+                            <span>REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Flutter & Dart -->
+                    <div class="skill-card glass-panel" data-category="mobile">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-mobile-screen-button text-cyan"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Flutter & Dart</h4>
+                                <span class="skill-badge">Cross-Platform</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Reactive UI architecture, BLoC/Provider state management, MethodChannels native bridges, and Sqflite offline storage.</p>
+                        <div class="skill-tags">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>BLoC / Provider</span>
+                            <span>Sqflite</span>
+                            <span>MethodChannels</span>
+                        </div>
+                    </div>
+
+                    <!-- Native Android (Kotlin) -->
+                    <div class="skill-card glass-panel" data-category="mobile">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-android text-green"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Native Android (Kotlin)</h4>
+                                <span class="skill-badge">System Security</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">DeviceAdminReceiver lock-screen hooks, CameraX silent capture, geofencing, background services, and hardware APIs.</p>
+                        <div class="skill-tags">
+                            <span>Kotlin</span>
+                            <span>DeviceAdminReceiver</span>
+                            <span>CameraX</span>
+                            <span>Geofencing</span>
+                            <span>Foreground Services</span>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Cloud & Licensing -->
+                    <div class="skill-card glass-panel" data-category="mobile">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-shield-halved text-orange"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Firebase & Cloud Sync</h4>
+                                <span class="skill-badge">Cloud & Licensing</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Firebase Auth, Cloud Firestore hardware-enforced device limits, Google Drive API direct zero-cost storage, and Analytics.</p>
+                        <div class="skill-tags">
+                            <span>Firebase Auth</span>
+                            <span>Cloud Firestore</span>
+                            <span>Google Drive API</span>
+                            <span>Firebase Analytics</span>
+                            <span>MBTiles Server</span>
+                        </div>
+                    </div>
+
+                    <!-- Elasticsearch & ELK -->
+                    <div class="skill-card glass-panel" data-category="search-ai">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-magnifying-glass text-yellow"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Elasticsearch & ELK</h4>
+                                <span class="skill-badge">Search & Analytics</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Index mapping, query optimization, full-text search, cluster management, Logstash pipelines, Kibana dashboards.</p>
+                        <div class="skill-tags">
+                            <span>Elasticsearch</span>
+                            <span>Logstash</span>
+                            <span>Kibana</span>
+                            <span>ELK Stack</span>
+                        </div>
+                    </div>
+
+                    <!-- Agentic AI & RAG -->
+                    <div class="skill-card glass-panel" data-category="search-ai">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-robot text-purple"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Agentic AI & RAG</h4>
+                                <span class="skill-badge">AI Systems</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">LLM integration, Retrieval-Augmented Generation (RAG), Prompt Engineering, Function/Tool Calling, Workflow Orchestration.</p>
+                        <div class="skill-tags">
+                            <span>LLM APIs</span>
+                            <span>RAG Architecture</span>
+                            <span>Prompt Eng</span>
+                            <span>AI Agents</span>
+                        </div>
+                    </div>
+
+                    <!-- Kafka & RabbitMQ -->
+                    <div class="skill-card glass-panel" data-category="db-broker">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired text-cyan"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Message Brokers</h4>
+                                <span class="skill-badge">Event Streaming</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Asynchronous inter-service messaging, event-driven architecture, distributed pub/sub queues, real-time streams.</p>
+                        <div class="skill-tags">
+                            <span>Apache Kafka</span>
+                            <span>RabbitMQ</span>
+                            <span>Event-Driven</span>
+                        </div>
+                    </div>
+
+                    <!-- Relational & SQL DBs -->
+                    <div class="skill-card glass-panel" data-category="db-broker">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-database text-blue"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Relational Databases</h4>
+                                <span class="skill-badge">Persistence</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Schema design, query optimization, indexing, ACID transactions, stored procedures across leading enterprise engines.</p>
+                        <div class="skill-tags">
+                            <span>PostgreSQL</span>
+                            <span>Oracle DB</span>
+                            <span>MySQL</span>
+                            <span>MSSQL Server</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Cloud -->
+                    <div class="skill-card glass-panel" data-category="devops">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-docker text-cyan"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>DevOps & Cloud</h4>
+                                <span class="skill-badge">Infrastructure</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Docker containerization, Kubernetes container orchestration, AWS services, automated Jenkins CI/CD pipelines.</p>
+                        <div class="skill-tags">
+                            <span>AWS</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>Jenkins</span>
+                            <span>Git / Maven</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend (Angular / React) -->
+                    <div class="skill-card glass-panel" data-category="frontend">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-angular text-red"></i></div>
+                            <div class="skill-title-wrap">
+                                <h4>Frontend Technologies</h4>
+                                <span class="skill-badge">User Interface</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Building intuitive client interfaces, dashboard integration, REST API consumption, responsive HTML5/CSS3/Bootstrap.</p>
+                        <div class="skill-tags">
+                            <span>Angular</span>
+                            <span>HTML5 / CSS3</span>
+                            <span>Bootstrap</span>
+                            <span>React.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section class="section experience-section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle"><i class="fa-solid fa-briefcase"></i> Work History</span>
+                    <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+                    <p class="section-desc">Demonstrated history of delivering mission-critical enterprise systems.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <!-- Experience Card 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-inner"></div>
+                        </div>
+                        <div class="timeline-content glass-panel">
+                            <div class="timeline-header">
+                                <div class="timeline-role-info">
+                                    <h3 class="role-title">Software Engineer</h3>
+                                    <h4 class="company-name">
+                                        <i class="fa-solid fa-building text-cyan"></i> SoftCafe IT Solution Bangladesh Limited
+                                    </h4>
+                                </div>
+                                <div class="timeline-period-badge">
+                                    <i class="fa-regular fa-calendar-check"></i> Jan 2024 – Present <span class="live-pill">Current</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-location">
+                                <i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh
+                            </div>
+
+                            <ul class="timeline-bullets">
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-cyan"></i>
+                                    <span><strong>Microservices & Scalability:</strong> Designed and developed high-throughput scalable microservices using <strong>Java 21</strong> and <strong>Spring Boot 3+</strong>, ensuring fault tolerance, high availability, and maintainability.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-yellow"></i>
+                                    <span><strong>Search & Indexing Engine:</strong> Managed <strong>Elasticsearch clusters</strong>, custom mappings, and complex queries to achieve optimal sub-second search performance and ultra-fast data indexing for enterprise client workloads.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-purple"></i>
+                                    <span><strong>Agentic AI & RAG Integration:</strong> Integrated Agentic AI workflows, LLMs, and Retrieval-Augmented Generation into internal software systems, implementing custom prompt engineering and tool/function calling for automated processing.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-cyan"></i>
+                                    <span><strong>Asynchronous Messaging:</strong> Implemented robust decoupled event-driven communication across microservices utilizing <strong>RabbitMQ</strong> and <strong>Apache Kafka</strong>.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-green"></i>
+                                    <span><strong>DevOps & CI/CD Pipelines:</strong> Contributed to automated continuous deployment pipelines using <strong>Jenkins, Docker, and AWS</strong>, reducing deployment overhead and maximizing system reliability.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-blue"></i>
+                                    <span><strong>Test-Driven Development (TDD):</strong> Applied strict TDD methodology and participated in rigorous peer code reviews to maintain clean architecture, robust security standards, and zero-defect deployments.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-orange"></i>
+                                    <span><strong>Agile Collaboration:</strong> Actively collaborated within Agile/Scrum sprints, driving sprint planning, refinement, and cross-functional feature delivery.</span>
+                                </li>
+                            </ul>
+
+                            <div class="timeline-tech-stack">
+                                <span class="tech-tag">Java 21</span>
+                                <span class="tech-tag">Spring Boot 3+</span>
+                                <span class="tech-tag">Elasticsearch</span>
+                                <span class="tech-tag">Agentic AI</span>
+                                <span class="tech-tag">RabbitMQ</span>
+                                <span class="tech-tag">Kafka</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Jenkins</span>
+                                <span class="tech-tag">TDD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card 2: Mobile Security & Flutter Systems -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-inner"></div>
+                        </div>
+                        <div class="timeline-content glass-panel">
+                            <div class="timeline-header">
+                                <div class="timeline-role-info">
+                                    <h3 class="role-title">Mobile Application Engineer (Flutter & Android)</h3>
+                                    <h4 class="company-name">
+                                        <i class="fa-brands fa-android text-green"></i> Cross-Platform & Mobile Security Solutions
+                                    </h4>
+                                </div>
+                                <div class="timeline-period-badge">
+                                    <i class="fa-regular fa-calendar-check"></i> 2023 – Present
+                                </div>
+                            </div>
+
+                            <div class="timeline-location">
+                                <i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh
+                            </div>
+
+                            <ul class="timeline-bullets">
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-green"></i>
+                                    <span><strong>Android System Security & Device Administration:</strong> Architected anti-theft security subsystems using native <strong>Kotlin</strong> and Android <strong>DeviceAdminReceiver</strong> to detect unauthorized lock-screen password/pattern attempts and capture silent front-camera intruder snapshots via CameraX.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-cyan"></i>
+                                    <span><strong>Cross-Platform Flutter & MethodChannels:</strong> Engineered performant cross-platform mobile apps with <strong>Flutter (Dart)</strong>, developing low-latency native platform channels (MethodChannels) for seamless bidirectional communication between Dart UI and Android native security services.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-yellow"></i>
+                                    <span><strong>Offline Spatial Maps & Embedded Tile Server:</strong> Built a 100% offline background location alarm engine utilizing <strong>MBTiles</strong>, <strong>Sqflite</strong>, and a custom embedded local HTTP tile server to trigger arrival alarms without cellular connectivity.</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-purple"></i>
+                                    <span><strong>Cloud Licensing & Serverless Storage:</strong> Integrated <strong>Firebase Authentication</strong> and <strong>Cloud Firestore</strong> for strict commercial multi-device limit licensing, alongside direct <strong>Google Drive REST API</strong> automation to eliminate backend storage hosting costs.</span>
+                                </li>
+                            </ul>
+
+                            <div class="timeline-tech-stack">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Dart</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">DeviceAdminReceiver</span>
+                                <span class="tech-tag">CameraX</span>
+                                <span class="tech-tag">MBTiles / Sqflite</span>
+                                <span class="tech-tag">Firebase Auth</span>
+                                <span class="tech-tag">Cloud Firestore</span>
+                                <span class="tech-tag">Google Drive API</span>
+                                <span class="tech-tag">Local HTTP Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Projects Section -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle"><i class="fa-solid fa-cubes"></i> Featured Work</span>
+                    <h2 class="section-title">Key Enterprise <span class="gradient-text">Projects</span></h2>
+                    <p class="section-desc">Production-proven banking, financial, and intelligent enterprise platforms.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: RLTS -->
+                    <div class="project-card glass-panel">
+                        <div class="project-card-banner banner-banking">
+                            <div class="client-badge"><i class="fa-solid fa-landmark"></i> Client: Dhaka Bank</div>
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-type-tag">Banking & Retail Finance</div>
+                            <h3 class="project-title">RLTS - Retail Loan Management System</h3>
+                            <p class="project-desc">
+                                Developed backend microservices modules for a comprehensive enterprise retail loan management system for Dhaka Bank. Implemented Elasticsearch for fast data indexing and search optimization, and utilized RabbitMQ for scalable microservices communication, efficiently handling transactional data and multi-tier approval workflows.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-bolt text-yellow"></i>
+                                    <span>Elasticsearch indexing for instant applicant & loan data retrieval</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-check text-green"></i>
+                                    <span>RabbitMQ asynchronous messaging for transactional loan approvals</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-shield-halved text-cyan"></i>
+                                    <span>Oracle DB integration with transactional ACID guarantees</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-badges">
+                                <span>Java 21</span>
+                                <span>Spring Boot 3+</span>
+                                <span>Elasticsearch</span>
+                                <span>RabbitMQ</span>
+                                <span>Angular</span>
+                                <span>Oracle DB</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm" onclick="openProjectModal('rlts')">
+                                    <i class="fa-solid fa-circle-info"></i> System Deep Dive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: PRID -->
+                    <div class="project-card glass-panel">
+                        <div class="project-card-banner banner-prid">
+                            <div class="client-badge"><i class="fa-solid fa-landmark"></i> Client: Dhaka Bank</div>
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-type-tag">Core Banking & Profit/Interest Engine</div>
+                            <h3 class="project-title">PRID - Profit / Interest Distribution System</h3>
+                            <p class="project-desc">
+                                Enterprise interest distribution platform for Dhaka Bank. Automatically polls daily core source data, normalizes records with strict 30-day month & gap-filling rules, and computes 'Monthly Average Amount' for precise interest distribution across Branches, Sub-Branches, and Foreign Currency accounts.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-calculator text-cyan"></i>
+                                    <span>Strict 30-day month rule & automated data gap-filling logic</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-code-fork text-green"></i>
+                                    <span>Spring Boot multi-module (prid-server, prid-data-poller, prid-entity)</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-table-cells text-yellow"></i>
+                                    <span>Angular 20 & Slickgrid for high-volume banking ledger rendering</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-scale-balanced text-purple"></i>
+                                    <span>100% deterministic calculation for Branches, Sub-Branches & FC accounts</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-badges">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>Angular 20</span>
+                                <span>Bootstrap 5</span>
+                                <span>RxJS</span>
+                                <span>Chart.js</span>
+                                <span>Angular-Slickgrid</span>
+                                <span>Oracle DB</span>
+                                <span>Multi-Module</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm" onclick="openProjectModal('prid')">
+                                    <i class="fa-solid fa-circle-info"></i> System Deep Dive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: FMS -->
+                    <div class="project-card glass-panel">
+                        <div class="project-card-banner banner-finance">
+                            <div class="client-badge"><i class="fa-solid fa-shield"></i> Client: Ansar VDP</div>
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-type-tag">Financial Management & Tracking</div>
+                            <h3 class="project-title">FMS - Financial Management System</h3>
+                            <p class="project-desc">
+                                Contributed to a robust financial management system streamlining organizational financial tracking, fund management, and multi-tier budget allocation. Integrated Apache Kafka for real-time event streaming across services and assisted in deploying the containerized solution via automated CI/CD pipelines.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-bolt text-cyan"></i>
+                                    <span>Apache Kafka for real-time ledger & event stream processing</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-check text-green"></i>
+                                    <span>PostgreSQL database design with high query performance</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-cloud-arrow-up text-orange"></i>
+                                    <span>Automated Jenkins CI/CD & Docker containerized deployments</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-badges">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>Kafka</span>
+                                <span>PostgreSQL</span>
+                                <span>Docker</span>
+                                <span>Jenkins</span>
+                                <span>Angular</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm" onclick="openProjectModal('fms')">
+                                    <i class="fa-solid fa-circle-info"></i> System Deep Dive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: ERP & AI Evaluation -->
+                    <div class="project-card glass-panel">
+                        <div class="project-card-banner banner-ai">
+                            <div class="client-badge"><i class="fa-solid fa-microchip"></i> Enterprise Innovation</div>
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-type-tag">Enterprise ERP & Agentic AI</div>
+                            <h3 class="project-title">ERP System & AI Content Evaluation</h3>
+                            <p class="project-desc">
+                                Developed backend microservices handling high-concurrency enterprise financial transactions and engineered AI evaluation workflows utilizing LLM APIs to analyze and score technical content. Implemented full ELK stack monitoring for distributed logs and real-time observability.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-robot text-purple"></i>
+                                    <span>LLM API orchestration for intelligent technical content validation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-chart-line text-yellow"></i>
+                                    <span>Complete ELK Stack (Elasticsearch, Logstash, Kibana) observability</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-layer-group text-cyan"></i>
+                                    <span>Microservice-based ERP transaction engine with high consistency</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-badges">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>LLM APIs</span>
+                                <span>Elasticsearch</span>
+                                <span>Logstash</span>
+                                <span>Kibana</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm" onclick="openProjectModal('erp')">
+                                    <i class="fa-solid fa-circle-info"></i> System Deep Dive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: SecureEye -->
+                    <div class="project-card glass-panel">
+                        <div class="project-card-banner banner-security">
+                            <div class="client-badge"><i class="fa-solid fa-shield-virus"></i> Commercial Mobile Security</div>
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-type-tag">Mobile Anti-Theft & Offline Geo-Security</div>
+                            <h3 class="project-title">SecureEye - Mobile Anti-Theft & Geo-Security</h3>
+                            <p class="project-desc">
+                                Advanced mobile anti-theft and location security app built with Flutter (Dart) and native Kotlin. Silently captures front-camera photos on failed lock-screen PIN attempts via Android DeviceAdminReceiver, auto-syncing to user Google Drive with zero server costs, and delivers offline MBTiles-powered radius alarms.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-camera text-green"></i>
+                                    <span>Silent front-camera intruder capture on wrong PIN via DeviceAdminReceiver</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-cloud-arrow-up text-cyan"></i>
+                                    <span>Direct Google Drive upload & instant email alert (zero server storage cost)</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-map-location-dot text-yellow"></i>
+                                    <span>100% offline background location alarms with MBTiles (Sqflite) & local HTTP server</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fa-solid fa-mobile-screen-button text-purple"></i>
+                                    <span>Firebase Auth & Firestore strict multi-device limit commercial licensing</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-badges">
+                                <span>Flutter</span>
+                                <span>Dart</span>
+                                <span>Kotlin</span>
+                                <span>DeviceAdminReceiver</span>
+                                <span>MBTiles / Sqflite</span>
+                                <span>Firebase Auth</span>
+                                <span>Firestore</span>
+                                <span>Google Drive API</span>
+                            </div>
+
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm" onclick="openProjectModal('secureeye')">
+                                    <i class="fa-solid fa-circle-info"></i> System Deep Dive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Credentials Section -->
+        <section class="section education-section" id="education">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle"><i class="fa-solid fa-graduation-cap"></i> Academic & Professional</span>
+                    <h2 class="section-title">Education & <span class="gradient-text">Qualifications</span></h2>
+                    <p class="section-desc">Strong foundation in Enterprise Software Engineering and Business Management.</p>
+                </div>
+
+                <div class="education-grid">
+                    <!-- IsDB-BISEW -->
+                    <div class="edu-card glass-panel highlight-edu">
+                        <div class="edu-badge-icon">
+                            <i class="fa-solid fa-award text-yellow"></i>
+                        </div>
+                        <div class="edu-content">
+                            <span class="edu-type">Professional Scholarship Programme</span>
+                            <h3>Enterprise Systems Analysis & Design - J2EE</h3>
+                            <h4 class="edu-institute">IsDB-BISEW IT Scholarship Programme</h4>
+                            <p class="edu-desc">Comprehensive rigorous specialization in Enterprise Java Architecture, J2EE, Spring ecosystem, Oracle Database, and enterprise system design.</p>
+                        </div>
+                    </div>
+
+                    <!-- PGD-IT -->
+                    <div class="edu-card glass-panel">
+                        <div class="edu-badge-icon">
+                            <i class="fa-solid fa-laptop-code text-cyan"></i>
+                        </div>
+                        <div class="edu-content">
+                            <span class="edu-type">Postgraduate Diploma</span>
+                            <h3>Postgraduate Diploma in Information Technology (PGD-IT)</h3>
+                            <h4 class="edu-institute">Jahangirnagar University, Dhaka</h4>
+                            <p class="edu-desc">Advanced software engineering, database management systems, network protocols, and computer science fundamentals.</p>
+                        </div>
+                    </div>
+
+                    <!-- MBA -->
+                    <div class="edu-card glass-panel">
+                        <div class="edu-badge-icon">
+                            <i class="fa-solid fa-chart-line text-green"></i>
+                        </div>
+                        <div class="edu-content">
+                            <span class="edu-type">Master's Degree</span>
+                            <h3>Master of Business Administration (MBA)</h3>
+                            <h4 class="edu-institute">National University, Bangladesh</h4>
+                            <p class="edu-desc">Strategic management, operational efficiency, organizational analytics, and business acumen.</p>
+                        </div>
+                    </div>
+
+                    <!-- BBA -->
+                    <div class="edu-card glass-panel">
+                        <div class="edu-badge-icon">
+                            <i class="fa-solid fa-briefcase text-orange"></i>
+                        </div>
+                        <div class="edu-content">
+                            <span class="edu-type">Bachelor's Degree</span>
+                            <h3>Bachelor of Business Administration (BBA)</h3>
+                            <h4 class="edu-institute">National University, Bangladesh</h4>
+                            <p class="edu-desc">Business economics, organizational behavior, financial analysis, and strategic communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle"><i class="fa-solid fa-paper-plane"></i> Let's Connect</span>
+                    <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                    <p class="section-desc">Have an opportunity, enterprise project, or technical question? Feel free to reach out directly.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Left: Contact Details & Socials -->
+                    <div class="contact-info-card glass-panel">
+                        <h3>Let's build scalable systems together</h3>
+                        <p>I am actively open to discussing Java backend engineering roles, Elasticsearch optimization consulting, or Agentic AI architecture projects.</p>
+
+                        <div class="direct-contact-list">
+                            <div class="contact-item" onclick="copyToClipboard('sadlyahamed1@gmail.com', 'Email copied to clipboard!')">
+                                <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="ci-text">
+                                    <span class="ci-label">Email Address</span>
+                                    <span class="ci-val">sadlyahamed1@gmail.com</span>
+                                </div>
+                                <button class="ci-copy-btn" title="Copy Email"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+
+                            <div class="contact-item" onclick="copyToClipboard('+8801750942992', 'Phone number copied to clipboard!')">
+                                <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="ci-text">
+                                    <span class="ci-label">Phone & WhatsApp</span>
+                                    <span class="ci-val">+880 1750 942992</span>
+                                </div>
+                                <button class="ci-copy-btn" title="Copy Phone"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="ci-text">
+                                    <span class="ci-label">Location</span>
+                                    <span class="ci-val">Dhaka, Bangladesh (Open to Remote / Relocation)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links-block">
+                            <span class="social-title">Professional Profiles:</span>
+                            <div class="social-buttons">
+                                <a href="https://github.com/sadlyahamed" target="_blank" rel="noopener noreferrer" class="social-btn github-btn" id="social-github">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://linkedin.com/in/sheikh-sadly-ahamed-25abb7284" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn" id="social-linkedin">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="mailto:sadlyahamed1@gmail.com" class="social-btn email-btn" id="social-email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>Direct Email</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Contact Form -->
+                    <div class="contact-form-card glass-panel">
+                        <h3>Send a Direct Message</h3>
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="form-name">Your Name</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-user input-icon"></i>
+                                    <input type="text" id="form-name" required placeholder="e.g. John Doe">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-email">Your Email</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-at input-icon"></i>
+                                    <input type="email" id="form-email" required placeholder="john@example.com">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-tag input-icon"></i>
+                                    <input type="text" id="form-subject" required placeholder="Software Engineer Opportunity / Project Inquiry">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <div class="input-wrap">
+                                    <textarea id="form-message" rows="4" required placeholder="Hello Sheikh Sadly, I would like to discuss..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                                <i class="fa-regular fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#hero" class="brand-logo footer-logo">
+                    <span class="code-bracket">&lt;</span>
+                    <span class="brand-name">Sadly<span class="accent-dot">.</span>Ahamed</span>
+                    <span class="code-bracket">/&gt;</span>
+                </a>
+                <p class="footer-tagline">Building High-Performance Java Microservices & Intelligent AI Architectures.</p>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2026 Sheikh Sadly Ahamed. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Float Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Interactive Project Modal -->
+    <div id="project-modal" class="modal-overlay" onclick="closeProjectModal(event)">
+        <div class="modal-content glass-panel" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">&times;</button>
+            <div id="modal-body">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

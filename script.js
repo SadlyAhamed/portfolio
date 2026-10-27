@@ -33,40 +33,186 @@ function initCanvasParticles() {
     });
 
     const particles = [];
-    const particleCount = Math.min(Math.floor(window.innerWidth / 20), 65);
+    const particleCount = Math.min(Math.floor(window.innerWidth / 18), 75);
 
     for (let i = 0; i < particleCount; i++) {
+        const vx = (Math.random() - 0.5) * 0.45;
+        const vy = (Math.random() - 0.5) * 0.45;
         particles.push({
             x: Math.random() * width,
             y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.45,
-            vy: (Math.random() - 0.5) * 0.45,
+            vx: vx,
+            vy: vy,
+            baseVx: vx,
+            baseVy: vy,
             size: Math.random() * 1.8 + 0.8,
-            alpha: Math.random() * 0.5 + 0.2
+            alpha: Math.random() * 0.5 + 0.2,
+            baseAlpha: Math.random() * 0.5 + 0.2
+        });
+    }
+
+    // Explosion sparks array & shockwave rings
+    const sparks = [];
+    const shockwaves = [];
+
+    // Trigger explosive blast on cursor click
+    function triggerBlast(x, y) {
+        const blastRadius = 260;
+        const blastPower = 18;
+
+        // 1. Push ambient particles away violently
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            const dx = p.x - x;
+            const dy = p.y - y;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+
+            if (dist < blastRadius) {
+                const force = ((blastRadius - dist) / blastRadius) * blastPower;
+                const angle = Math.atan2(dy, dx);
+                p.vx += Math.cos(angle) * force;
+                p.vy += Math.sin(angle) * force;
+                p.alpha = 1;
+            }
+        }
+
+        // 2. Spawn radiant explosion shards
+        const sparkCount = 30;
+        const colors = [
+            'rgba(6, 182, 212, ',   // Neon Cyan
+            'rgba(16, 185, 129, ',  // Emerald
+            'rgba(249, 115, 22, ',  // Cyber Orange
+            'rgba(255, 255, 255, '  // Core White
+        ];
+
+        for (let i = 0; i < sparkCount; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 9 + 3;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            sparks.push({
+                x: x,
+                y: y,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                size: Math.random() * 2.6 + 1.2,
+                color: color,
+                alpha: 1,
+                decay: Math.random() * 0.024 + 0.016
+            });
+        }
+
+        // 3. Shockwave expansion ring
+        shockwaves.push({
+            x: x,
+            y: y,
+            radius: 4,
+            maxRadius: 180,
+            alpha: 0.85
         });
     }
 
     let mouseX = -1000;
     let mouseY = -1000;
+    const mouseRadius = 140;
 
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
 
+    window.addEventListener('mouseleave', () => {
+        mouseX = -1000;
+        mouseY = -1000;
+    });
+
+    window.addEventListener('click', (e) => {
+        triggerBlast(e.clientX, e.clientY);
+    });
+
     function render() {
         ctx.clearRect(0, 0, width, height);
 
+        // 1. Render & Update Expanding Shockwaves
+        for (let i = shockwaves.length - 1; i >= 0; i--) {
+            const sw = shockwaves[i];
+            sw.radius += (sw.maxRadius - sw.radius) * 0.12 + 2;
+            sw.alpha *= 0.92;
+
+            if (sw.alpha < 0.02 || sw.radius >= sw.maxRadius) {
+                shockwaves.splice(i, 1);
+                continue;
+            }
+
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(6, 182, 212, ${sw.alpha * 0.7})`;
+            ctx.lineWidth = 2.2;
+            ctx.shadowColor = '#06b6d4';
+            ctx.shadowBlur = 10;
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        // 2. Render & Update Blast Sparks
+        for (let i = sparks.length - 1; i >= 0; i--) {
+            const s = sparks[i];
+            s.x += s.vx;
+            s.y += s.vy;
+            s.vx *= 0.94;
+            s.vy *= 0.94;
+            s.alpha -= s.decay;
+
+            if (s.alpha <= 0) {
+                sparks.splice(i, 1);
+                continue;
+            }
+
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+            ctx.fillStyle = `${s.color}${s.alpha})`;
+            ctx.fill();
+        }
+
+        // 3. Render & Update Ambient Particles
         for (let i = 0; i < particles.length; i++) {
             const p = particles[i];
+
+            // Cursor hover repulsion / interactive displacement
+            const mdx = p.x - mouseX;
+            const mdy = p.y - mouseY;
+            const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+            if (mDist < mouseRadius && mDist > 0) {
+                const repulseForce = (1 - mDist / mouseRadius) * 3.5;
+                const angle = Math.atan2(mdy, mdx);
+                p.vx += Math.cos(angle) * repulseForce * 0.35;
+                p.vy += Math.sin(angle) * repulseForce * 0.35;
+                p.alpha = Math.min(1, p.alpha + 0.3);
+
+                // Laser connection from cursor to nearby particle
+                ctx.beginPath();
+                ctx.moveTo(mouseX, mouseY);
+                ctx.lineTo(p.x, p.y);
+                ctx.strokeStyle = `rgba(6, 182, 212, ${0.3 * (1 - mDist / mouseRadius)})`;
+                ctx.lineWidth = 0.75;
+                ctx.stroke();
+            }
 
             p.x += p.vx;
             p.y += p.vy;
 
+            // Decelerate back to calm cruising drift
+            p.vx = p.vx * 0.94 + p.baseVx * 0.06;
+            p.vy = p.vy * 0.94 + p.baseVy * 0.06;
+            p.alpha = p.alpha * 0.97 + p.baseAlpha * 0.03;
+
+            // Boundary wrap
             if (p.x < 0) p.x = width;
             if (p.x > width) p.x = 0;
             if (p.y < 0) p.y = height;
             if (p.y > height) p.y = 0;
+
 
             // Draw particle
             ctx.beginPath();
@@ -85,7 +231,7 @@ function initCanvasParticles() {
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 130)})`;
+                    ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 130) * Math.min(p.alpha, p2.alpha)})`;
                     ctx.lineWidth = 0.6;
                     ctx.stroke();
                 }
@@ -97,6 +243,7 @@ function initCanvasParticles() {
 
     render();
 }
+
 
 /* ==========================================================================
    2. Hero Typing Effect
@@ -501,9 +648,9 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ==========================================================================
-   12. Contact Form Submission
+   12. Contact Form Submission (Web3Forms API)
    ========================================================================== */
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     const name = document.getElementById('form-name').value.trim();
     const email = document.getElementById('form-email').value.trim();
@@ -511,20 +658,46 @@ function handleFormSubmit(e) {
     const message = document.getElementById('form-message').value.trim();
 
     const submitBtn = document.getElementById('form-submit-btn');
-    submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Preparing Email...</span>`;
+    const originalBtnText = `<i class="fa-regular fa-paper-plane"></i> <span>Send Message</span>`;
+    submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending Message...</span>`;
     submitBtn.disabled = true;
 
-    // Launch mailto fallback
-    const mailtoUrl = `mailto:sadlyahamed1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Sheikh Sadly,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                access_key: 'ecdfe1e6-a2d4-4c95-b00b-fd64cbbd0b3a',
+                name: name,
+                email: email,
+                subject: subject || 'Portfolio Contact Message',
+                message: message,
+                from_name: `${name} (Portfolio Inquiry)`
+            })
+        });
 
-    setTimeout(() => {
+        const result = await response.json();
+
+        if (result.success) {
+            showToast('Thank you! Your message has been sent directly to my email.');
+            document.getElementById('contact-form').reset();
+        } else {
+            showToast(result.message || 'Failed to send message. Please try again.');
+        }
+    } catch (err) {
+        console.error('Contact submission error:', err);
+        showToast('Network error. Opening email client fallback...');
+        const mailtoUrl = `mailto:sadlyahamed1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Sheikh Sadly,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
         window.location.href = mailtoUrl;
-        showToast('Thank you! Opening your email client to send...');
-        document.getElementById('contact-form').reset();
-        submitBtn.innerHTML = `<i class="fa-regular fa-paper-plane"></i> <span>Send Message</span>`;
+    } finally {
+        submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
-    }, 600);
+    }
 }
+
 
 /* ==========================================================================
    13. Robust Offline & Online CV Download Engine

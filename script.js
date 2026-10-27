@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStatCounters();
     initBackToTop();
     initMobileNav();
+    initCVDownload();
 });
 
 /* ==========================================================================
@@ -524,3 +525,50 @@ function handleFormSubmit(e) {
         submitBtn.disabled = false;
     }, 600);
 }
+
+/* ==========================================================================
+   13. Robust Offline & Online CV Download Engine
+   ========================================================================== */
+function b64toBlob(b64Data, contentType = 'application/pdf', sliceSize = 512) {
+    const byteCharacters = atob(b64Data);
+    const byteArrays = [];
+
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        const slice = byteCharacters.slice(offset, offset + sliceSize);
+        const byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+        byteArrays.push(new Uint8Array(byteNumbers));
+    }
+
+    return new Blob(byteArrays, { type: contentType });
+}
+
+function initCVDownload() {
+    let downloadHref = 'assets/Sheikh_Sadly_Ahamed_CV.pdf';
+    const fileName = 'Sheikh_Sadly_Ahamed_CV.pdf';
+
+    // 1. Generate pre-warmed Blob URL from embedded Base64 (guarantees direct disk download on file:// and http/https)
+    if (window.CV_PDF_BASE64) {
+        try {
+            const blob = b64toBlob(window.CV_PDF_BASE64, 'application/pdf');
+            downloadHref = window.URL.createObjectURL(blob);
+        } catch (err) {
+            console.warn('Base64 blob conversion failed:', err);
+        }
+    }
+
+    const cvButtons = document.querySelectorAll('.cv-download-action, #hero-download-cv, #nav-cv-download, #social-cv');
+    cvButtons.forEach(btn => {
+        btn.href = downloadHref;
+        btn.setAttribute('download', fileName);
+        btn.removeAttribute('target');
+        btn.addEventListener('click', () => {
+            showToast('Downloading Sheikh Sadly Ahamed CV (PDF)...');
+        });
+    });
+}
+
+
+

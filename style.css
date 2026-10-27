@@ -1505,6 +1505,7 @@ h1, h2, h3, h4, h5, h6 {
 .github-btn:hover { background: #24292e; border-color: #ffffff; }
 .linkedin-btn:hover { background: #0077b5; border-color: #0077b5; }
 .email-btn:hover { background: var(--cyan-primary); border-color: var(--cyan-primary); }
+.cv-social-btn:hover { background: #dc2626; border-color: #dc2626; }
 
 /* Contact Form */
 .form-group {
